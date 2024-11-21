@@ -59,7 +59,7 @@ const Product = require('../models/productModel');
 // app.use(cors());
 app.use(cors(
   {
-    origin: [""],
+    origin: ["https://productfrt.vercel.app"],
     methods: ["POST","GET"],
     credentials: true
   }
