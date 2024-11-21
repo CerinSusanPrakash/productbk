@@ -1,9 +1,9 @@
 const express = require('express');
 const cors = require('cors'); // Import CORS
 const app = express();
-require('../connection');
-const connectDB = require("../connection");
-const Product = require('../models/productModel');
+require('./connection');
+const connectDB = require("./connection");
+const Product = require('./models/productModel');
 
 // Enable CORS for all origins (use in development for simplicity)
 // app.use(cors());
