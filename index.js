@@ -7,10 +7,11 @@ const Product = require('./models/productModel');
 
 // Enable CORS for all origins (use in development for simplicity)
 // app.use(cors());
+
 app.use(cors(
   {
     origin: ["https://productfrt.vercel.app"],
-    methods: ["POST","GET"],
+    methods: ["POST", "GET"],
     credentials: true
   }
 ));
