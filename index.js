@@ -11,7 +11,7 @@ const Product = require('./models/productModel');
 app.use(cors(
   {
     origin: ["https://productfrt.vercel.app"],
-    methods: ["POST","GET","PUT","DELETE"],
+    methods: ["POST","GET"],
     credentials: true
   }
 ));
