@@ -15,6 +15,10 @@ app.use(cors(
   }
 ));
 
+app.get('/',(req,res)=>{
+  res.json("Backend working");
+})
+
 // If you want to allow specific origins only, use this instead:
 // app.use(cors({
 //   origin: 'http://localhost:5173' // Allow only the React frontend
