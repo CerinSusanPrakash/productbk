@@ -56,7 +56,14 @@ const connectDB = require("../connection");
 const Product = require('../models/productModel');
 
 // Enable CORS for all origins (use in development for simplicity)
-app.use(cors());
+// app.use(cors());
+app.use(cors(
+  {
+    origin: [""],
+    methods: ["POST","GET"],
+    credentials: true
+  }
+));
 
 // If you want to allow specific origins only, use this instead:
 // app.use(cors({
