@@ -48,6 +48,34 @@ app.post('/addproducts', async (req, res) => {
   }
 });
 
+// Update a product
+app.put('/updateproduct/:id', async (req, res) => {
+  const { id } = req.params;
+  const { name, description, price } = req.body;
+  try {
+    const updatedProduct = await Product.findByIdAndUpdate(
+      id,
+      { name, description, price },
+      { new: true } // Return the updated product
+    );
+    res.status(200).json(updatedProduct);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+});
+
+// Delete a product
+app.delete('/deleteproduct/:id', async (req, res) => {
+  const { id } = req.params;
+  try {
+    await Product.findByIdAndDelete(id);
+    res.status(200).json({ message: 'Product deleted successfully' });
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+});
+
+
 app.listen(5000, () => {
   console.log('Server is running on PORT 5000');
 });
